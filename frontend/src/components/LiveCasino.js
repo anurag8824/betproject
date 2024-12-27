@@ -1,15 +1,85 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../pages/Card'
+import axios from 'axios'
 
 const LiveCasino = () => {
+
+    const [data, setData] = useState([]);
+
+
+
+    useEffect(() => {
+        axios.get("https://diamond-casino.p.rapidapi.com/api/casino/all-in-one-list", {
+            headers: {
+                'x-rapidapi-key': '50903d0f2amshf62877e2b6430b0p1ebb12jsn0bb5603f891b',
+                'x-rapidapi-host': 'diamond-casino.p.rapidapi.com'
+            }
+        }).then((res) => {
+            console.log(res, "casino list");
+            const list = res.data
+            setData(list)
+        })
+    }, [])
+
+
+    const tempData = [
+        {
+            casino_id: 'Andarbahar',
+            image: 'https://sitethemedata.com/casino_icons/lc/ab4.jpg',
+        },
+        {
+            casino_id: 'lucky7',
+            image: 'https://sitethemedata.com/casino_icons/lc/lucky7.jpg',
+        },
+        {
+            casino_id: 'Superover',
+            image: 'https://sitethemedata.com/casino_icons/lc/superover.jpg',
+        },
+        {
+            casino_id: 'Andarbahar2',
+            image: 'https://sitethemedata.com/casino_icons/lc/ab4.jpg',
+        },
+        {
+            casino_id: 'baccarat',
+            image: 'https://sitethemedata.com/casino_icons/lc/baccarat.jpg',
+        },
+        {
+            casino_id: 'baccarat2',
+            image: 'https://sitethemedata.com/casino_icons/lc/baccarat2.jpg',
+        },
+        {
+            casino_id: 'poker6player',
+            image: 'https://sitethemedata.com/casino_icons/lc/poker6.jpg',
+        },
+        {
+            casino_id: 'dragontiger1Day',
+            image: 'https://sitethemedata.com/casino_icons/lc/dt6.jpg',
+        },
+        {
+            casino_id: 'Queen',
+            image: 'https://sitethemedata.com/casino_icons/lc/queen.jpg',
+        },
+        {
+            casino_id: 'Cards3J',
+            image: 'https://sitethemedata.com/casino_icons/lc/3cardj.jpg',
+        },
+        {
+            casino_id: 'Ballbyball',
+            image: 'https://sitethemedata.com/casino_icons/lc/ballbyball.jpg',
+        },
+    ];
+
+    console.log(tempData, "cdk")
+
+
     return (
         <div>
 
             <div>
 
                 <div className='flex justify-between'>
-                    <p className='font-medium flex gap-2 text-yellow-400 items-center mt-4 text-lg'> <img className='size-4' src='/tash.png' />Live Casino</p>
+                    <p className='font-medium flex gap-2  items-center mt-4 text-lg'> <img className='size-4' src='/tash.png' />Live Casino</p>
 
                     <Link className='font-medium flex gap-2 mr-4 text-gray-400 items-center mt-4 text-sm'> All<img className='size-3' src='/next.svg' /></Link>
 
@@ -18,179 +88,91 @@ const LiveCasino = () => {
 
 
 
-                <div className='flex mt-2 overflow-x-auto scrollbar-hide gap-4 '>
 
-                    <Link to="#" className="relative flex flex-col items-center justify-center group">
-                        <div className="relative w-52 h-32 border border-gray-100 border-opacity-10 rounded-xl overflow-hidden">
-                            {/* Image */}
-                            <img
-                                className="w-full h-full object-cover rounded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
-                                src="/ultimate.png"
-                                alt="Poker Icon"
-                            />
-
-                            {/* shadow  */}
-
-                            <div className="absolute inset-0 bg-black bg-opacity-10 transition-opacity duration-500 ease-out group-hover:bg-opacity-50"></div>
-
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-                                <button className="hover:text-black text-orange-300 font-bold border rounded-md px-6 py-1 shadow-md hover:bg-yellow-600 border-yellow-600 transform transition-transform duration-300">
-                                    Play
-                                </button>
-                            </div>
-
-                            <p className="absolute text-xs bottom-2 left-1 text-white px-2 py-1 rounded-sm">
-                                Evolution
-                            </p>
-                        </div>
-
-                        {/* Below Image Text */}
-                        <p className="font-medium text-base"> Roullete</p>
-                    </Link>
-
-                    <Link to="#" className="relative flex flex-col items-center justify-center group">
-                        <div className="relative w-52 h-32 border border-gray-100 border-opacity-10 rounded-xl overflow-hidden">
-                            {/* Image */}
-                            <img
-                                className="w-full h-full object-cover rounded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
-                                src="/ultimate-roullete.png"
-                                alt="Poker Icon"
-                            />
-
-                            {/* shadow  */}
-
-                            <div className="absolute inset-0 bg-black bg-opacity-10 transition-opacity duration-500 ease-out group-hover:bg-opacity-50"></div>
-
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-                                <button className="hover:text-black text-orange-300 font-bold border rounded-md px-6 py-1 shadow-md hover:bg-yellow-600 border-yellow-600 transform transition-transform duration-300">
-                                    Play
-                                </button>
-                            </div>
-
-                            <p className="absolute text-xs bottom-2 left-1 text-white px-2 py-1 rounded-sm">
-                                Evolution
-                            </p>
-                        </div>
-
-                        {/* Below Image Text */}
-                        <p className="font-medium text-base">Ultimate Roullete</p>
-                    </Link>
+                <div className='flejx grid md:grid-cols-4 grid-cols-2 mt-2 overflow-x-auto scrollbar-hide gap-4 '>
 
 
+                    {tempData.map((item) => (
+                        item ? (
 
-                    <Link to="#" className="relative flex flex-col items-center justify-center group">
-                        <div className="relative w-52 h-32 border border-gray-100 border-opacity-10 rounded-xl overflow-hidden">
-                            {/* Image */}
-                            <img
-                                className="w-full h-full object-cover rounded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
-                                src="/1.jpg"
-                                alt="Poker Icon"
-                            />
+                            <Link to={item.casino_id} className="relative flex flex-col items-center justify-center group">
+                                <div className="relative w-52 h-32 border border-gray-100 border-opacity-10 rounded-xl overflow-hidden">
+                                    {/* Image */}
+                                    <img
+                                        className="w-full h-full object-cover rounded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
+                                        src={item.image}
+                                        alt="Poker Icon"
+                                    />
 
-                            {/* shadow  */}
+                                    {/* shadow  */}
 
-                            <div className="absolute inset-0 bg-black bg-opacity-10 transition-opacity duration-500 ease-out group-hover:bg-opacity-50"></div>
+                                    <div className="absolute inset-0 bg-black bg-opacity-10 transition-opacity duration-500 ease-out group-hover:bg-opacity-50"></div>
 
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-                                <button className="hover:text-black text-orange-300 font-bold border rounded-md px-6 py-1 shadow-md hover:bg-yellow-600 border-yellow-600 transform transition-transform duration-300">
-                                    Play
-                                </button>
-                            </div>
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
+                                        <button className="hover:text-black text-orange-300 font-bold border rounded-md px-6 py-1 shadow-md hover:bg-yellow-600 border-yellow-600 transform transition-transform duration-300">
+                                            Play
+                                        </button>
+                                    </div>
 
-                            <p className="absolute text-xs bottom-2 left-1 text-white px-2 py-1 rounded-sm">
-                                Evolution
-                            </p>
-                        </div>
+                                    <p className="absolute text-xs bottom-2 left-1 text-white px-2 py-1 rounded-sm">
+                                        Evolution
+                                    </p>
+                                </div>
 
-                        {/* Below Image Text */}
-                        <p className="font-medium text-base">Crazy Time</p>
-                    </Link>
+                                {/* Below Image Text */}
+                                <p className="font-medium text-base"> {item.casino_id}</p>
+                            </Link>
 
+                        ) : ""
+                    ))}
 
-                    <Link to="#" className="relative flex flex-col items-center justify-center group">
-                        <div className="relative w-52 h-32 border border-gray-100 border-opacity-10 rounded-xl overflow-hidden">
-                            {/* Image */}
-                            <img
-                                className="w-full h-full object-cover rounded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
-                                src="/2.jpg"
-                                alt="Poker Icon"
-                            />
+                </div>
 
-                            {/* shadow  */}
-
-                            <div className="absolute inset-0 bg-black bg-opacity-10 transition-opacity duration-500 ease-out group-hover:bg-opacity-50"></div>
-
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-                                <button className="hover:text-black text-orange-300 font-bold border rounded-md px-6 py-1 shadow-md hover:bg-yellow-600 border-yellow-600 transform transition-transform duration-300">
-                                    Play
-                                </button>
-                            </div>
-
-                            <p className="absolute text-xs bottom-2 left-1 text-white px-2 py-1 rounded-sm">
-                                Evolution
-                            </p>
-                        </div>
-
-                        {/* Below Image Text */}
-                        <p className="font-medium text-base">Gold Vault Roullete</p>
-                    </Link>
-
-                    <Link to="#" className="relative flex flex-col items-center justify-center group">
-                        <div className="relative w-52 h-32 border border-gray-100 border-opacity-10 rounded-xl overflow-hidden">
-                            {/* Image */}
-                            <img
-                                className="w-full h-full object-cover rounded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
-                                src="/3.jpeg"
-                                alt="Poker Icon"
-                            />
-
-                            {/* shadow  */}
-
-                            <div className="absolute inset-0 bg-black bg-opacity-10 transition-opacity duration-500 ease-out group-hover:bg-opacity-50"></div>
-
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-                                <button className="hover:text-black text-orange-300 font-bold border rounded-md px-6 py-1 shadow-md hover:bg-yellow-600 border-yellow-600 transform transition-transform duration-300">
-                                    Play
-                                </button>
-                            </div>
-
-                            <p className="absolute text-xs bottom-2 left-1 text-white px-2 py-1 rounded-sm">
-                                Evolution
-                            </p>
-                        </div>
-
-                        {/* Below Image Text */}
-                        <p className="font-medium text-base">Cricket War </p>
-                    </Link>
+                <p className='font-medium flex gap-2  items-center mt-4 text-lg'> <img className='size-4' src='/tash.png' />Other Casino</p>
 
 
-                    <Link to="#" className="relative flex flex-col items-center justify-center group">
-                        <div className="relative w-52 h-32 border border-gray-100 border-opacity-10 rounded-xl overflow-hidden">
-                            {/* Image */}
-                            <img
-                                className="w-full h-full object-cover rounded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
-                                src="/1.jpg"
-                                alt="Poker Icon"
-                            />
+                <div className='flejx grid  md:grid-cols-4 grid-cols-2 mt-2 overflow-x-auto scrollbar-hide gap-4 '>
 
-                            {/* shadow  */}
 
-                            <div className="absolute inset-0 bg-black bg-opacity-10 transition-opacity duration-500 ease-out group-hover:bg-opacity-50"></div>
+                    {data.map((item) => (
+                        item ? (
 
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-                                <button className="hover:text-black text-orange-300 font-bold border rounded-md px-6 py-1 shadow-md hover:bg-yellow-600 border-yellow-600 transform transition-transform duration-300">
-                                    Play
-                                </button>
-                            </div>
+                            <Link to="#" className="relative flex  flex-col items-center justify-center group">
+                                <div className="relative w-52 h-32 border border-gray-100 border-opacity-10 rounded-xl overflow-hidden">
+                                    {/* Image */}
+                                    <img
+                                        className="w-full h-full object-cover rounded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
+                                        src="/ultimate-roullete.png"
+                                        alt="Poker Icon"
+                                    />
 
-                            <p className="absolute text-xs bottom-2 left-1 text-white px-2 py-1 rounded-sm">
-                                Evolution
-                            </p>
-                        </div>
+                                    {/* shadow  */}
 
-                        {/* Below Image Text */}
-                        <p className="font-medium text-base">Crazy Time</p>
-                    </Link>
+                                    <div className="absolute inset-0 bg-black bg-opacity-10 transition-opacity duration-500 ease-out group-hover:bg-opacity-50"></div>
+
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
+                                        <button className="hover:text-black text-orange-300 font-bold border rounded-md px-6 py-1 shadow-md hover:bg-yellow-600 border-yellow-600 transform transition-transform duration-300">
+                                            Play
+                                        </button>
+                                    </div>
+
+                                    <p className="absolute text-xs bottom-2 left-1 text-white px-2 py-1 rounded-sm">
+                                        Evolution
+                                    </p>
+                                </div>
+
+                                {/* Below Image Text */}
+                                <p className="font-medium text-base"> {item.casino_id
+                                }</p>
+                            </Link>
+                        ) : ""
+                    ))}
+
+
+
+
+
+
 
 
 
@@ -207,6 +189,10 @@ const LiveCasino = () => {
 
 
                 </div>
+
+
+
+
 
             </div></div>
     )

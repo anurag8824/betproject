@@ -8,7 +8,7 @@ const Layout = () => {
     return (
         <>
             <Header />
-            <main className="pt-4 md:ml-60 mx-2 mt-20 mb-10">
+            <main className="pt-4 md:ml-60 mx-2 mt-[77px] mb-10">
                 <Outlet />
 
 

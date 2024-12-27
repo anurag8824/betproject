@@ -125,8 +125,8 @@ const Header = () => {
           </div>
         </nav>
 
-        <nav className='bg-gray-100 flex justify-between '>
-          <img className='h-12' src="./infa.png" alt='fgh' />
+        <div className='bg-gray-100 flex justify-between '>
+          <img className='h-12' src="/infa.png" alt='fgh' />
 
           <div className='flex gap-4'>
 
@@ -177,9 +177,9 @@ const Header = () => {
           </div>
 
 
-        </nav>
+        </div>
 
-        <div className='md:block hidden fixed h-full w-56 mt-2 bg-gray-200 '>
+        <div className='md:block hidden fixed h-full w-56 mt-1 bg-gray-200 '>
 
           <p className='bg-emerald-700 text-white text-base px-2 font-bold'>Racing Sports</p>
 

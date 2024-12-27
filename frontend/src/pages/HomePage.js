@@ -1,4 +1,4 @@
-import React, { useRef, useState,useEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import './CustomScrollbar.css';
 import { Link } from 'react-router-dom';
 import Carousel from './Carousel';
@@ -10,14 +10,16 @@ import TableGames from '../components/TableGames';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import data from "../AllSports.json"
 import axios from 'axios';
+import { MdSportsCricket } from "react-icons/md";
 
 
+import { IoIosTennisball } from "react-icons/io";
 
 
 const HomePage = () => {
 
 
-  
+
   const scrollContainerRef = useRef(null);
   const [activeId, setActiveId] = useState([1002]);
 
@@ -126,6 +128,64 @@ const HomePage = () => {
 
 
       </div>
+
+      <div className='md:flex grid grid-cols-2 md:grid-cols-2 gap-2 mb-2 md:grid-rows-1 grid-rows-2'>
+        <div className="relative w-52">
+          <img
+            className="bg-blue-950 w-full"
+            src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
+            alt="Wave"
+          />
+          <p className="absolute flex items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+            <MdSportsCricket />
+            West Indies v India
+          </p>
+        </div>
+
+        <div className="relative w-52">
+          <img
+            className="bg-blue-950 w-full"
+            src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
+            alt="Wave"
+          />
+          <p className="absolute flex items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+            <MdSportsCricket />
+            Australia v India
+          </p>
+        </div>
+
+        <div className="relative w-52">
+          <img
+            className="bg-blue-950 w-full"
+            src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
+            alt="Wave"
+          />
+          <p className="absolute flex items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+            <MdSportsCricket />
+
+            South Africa v Pakistan
+          </p>
+        </div>
+
+        <div className="relative w-52">
+          <img
+            className="bg-yellow-600 w-full"
+            src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
+            alt="Wave"
+          />
+          <p className="absolute flex items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+            <MdSportsCricket />
+
+            South Africa v Pakistan
+          </p>
+        </div>
+
+       
+
+
+      </div>
+
+
       <Carousel />
 
 
