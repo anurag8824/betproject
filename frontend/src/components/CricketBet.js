@@ -22,7 +22,7 @@ const CricketBet = () => {
             axios.get(`https://betfair-sports-casino-live-tv-result-odds.p.rapidapi.com/api/GetMarketOdds?market_id=${marketid}`,
                 {
                     headers: {
-                        'x-rapidapi-key': '50903d0f2amshf62877e2b6430b0p1ebb12jsn0bb5603f891b',
+                        'x-rapidapi-key': 'c872ddd763mshcc2e67f5845da91p18569djsn3f6476020794',
                         'x-rapidapi-host': 'betfair-sports-casino-live-tv-result-odds.p.rapidapi.com',
                     },
                 }
@@ -60,7 +60,7 @@ const CricketBet = () => {
             axios.get(`https://betfair-sports-casino-live-tv-result-odds.p.rapidapi.com/api/GetSession?eventid=${eventid}`,
                 {
                     headers: {
-                        'x-rapidapi-key': '50903d0f2amshf62877e2b6430b0p1ebb12jsn0bb5603f891b',
+                        'x-rapidapi-key': 'c872ddd763mshcc2e67f5845da91p18569djsn3f6476020794',
                         'x-rapidapi-host': 'betfair-sports-casino-live-tv-result-odds.p.rapidapi.com',
                     },
                 }

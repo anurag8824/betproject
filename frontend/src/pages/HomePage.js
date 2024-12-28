@@ -21,7 +21,7 @@ const HomePage = () => {
 
 
   const scrollContainerRef = useRef(null);
-  const [activeId, setActiveId] = useState([1002]);
+  const [activeId, setActiveId] = useState("1002");
 
   // Scroll left
   const scrollLeft = () => {
@@ -46,7 +46,7 @@ const HomePage = () => {
 
 
   const componentMapping = {
-    1001: <LiveCasino />,
+    // 1001: <LiveCasino />,
 
     1002: <Cricket />, // Map id to component
     // Add more mappings
@@ -129,51 +129,51 @@ const HomePage = () => {
 
       </div>
 
-      <div className='md:flex grid grid-cols-2 md:grid-cols-2 gap-2 mb-2 md:grid-rows-1 grid-rows-2'>
-        <div className="relative w-52">
+      <div className='md:flex grid grid-cols-2 md:grid-cols-2 gap-2  mb-2 md:grid-rows-1 grid-rows-2'>
+        <div className="relative md:w-52 w-44">
           <img
             className="bg-blue-950 w-full"
             src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
             alt="Wave"
           />
-          <p className="absolute flex items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+          <p className="absolute flex md:text-base text-sm items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
             <MdSportsCricket />
             West Indies v India
           </p>
         </div>
 
-        <div className="relative w-52">
+        <div className="relative md:w-52 w-44">
           <img
             className="bg-blue-950 w-full"
             src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
             alt="Wave"
           />
-          <p className="absolute flex items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+          <p className="absolute flex md:text-base text-sm items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
             <MdSportsCricket />
             Australia v India
           </p>
         </div>
 
-        <div className="relative w-52">
+        <div className="relative md:w-52 w-44">
           <img
             className="bg-blue-950 w-full"
             src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
             alt="Wave"
           />
-          <p className="absolute flex items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+          <p className="absolute flex  md:text-base text-sm items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
             <MdSportsCricket />
 
             South Africa v Pakistan
           </p>
         </div>
 
-        <div className="relative w-52">
+        <div className="relative md:w-52 w-44">
           <img
             className="bg-yellow-600 w-full"
             src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
             alt="Wave"
           />
-          <p className="absolute flex items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+          <p className="absolute flex md:text-base text-sm items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
             <MdSportsCricket />
 
             South Africa v Pakistan
@@ -236,7 +236,7 @@ const HomePage = () => {
       </div>
 
 
-      <div className="mt-4 my-4 p-4 ml-1 mr-2 bg-gray-100">
+      <div className="mt-2 my-4 px-4 py-1 ml-1 mr-2 bg-gray-100">
         {activeId ? (
           componentMapping[activeId] || <p>Component not found.</p>
         ) : (

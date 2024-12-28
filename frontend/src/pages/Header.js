@@ -89,7 +89,7 @@ const Header = () => {
 
 
                 <li>
-                  <Link to={"/owncasino"}
+                  <Link onClick={toggleCloseMenu} to={"/owncasino"}
                     className="block text-white px-8 py-2  font-bold   transition-all outline-none">Live Casino
                   </Link>
                 </li>
