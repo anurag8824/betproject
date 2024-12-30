@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Card from '../pages/Card'
 import axios from 'axios'
 
-const LiveCasino = () => {
+const Slot = () => {
 
     const [data, setData] = useState([]);
 
@@ -79,7 +79,7 @@ const LiveCasino = () => {
             <div>
 
                 <div className='flex justify-between'>
-                    <p className='font-medium flex gap-2  items-center mt-4 text-lg'> <img className='size-4' src='/tash.png' />Live Casino</p>
+                    <p className='font-medium flex gap-2  items-center mt-4 text-lg'> <img className='size-4' src='/tash.png' />Slot</p>
 
                     <Link className='font-medium flex gap-2 mr-4 text-gray-400 items-center mt-4 text-sm'> All<img className='size-3' src='/next.svg' /></Link>
 
@@ -89,17 +89,17 @@ const LiveCasino = () => {
 
 
 
-                <div className='flejx grid md:grid-cols-5 grid-cols-2 mt-2 overflow-x-auto scrollbar-hide lg:gap-2 gap-x-2 '>
+                <div className='flejx grid lg:grid-cols-5 grid-cols-2 mt-2 overflow-x-auto scrollbar-hide gap-x-2 lg:gap-2 '>
 
 
                     {tempData.map((item) => (
                         item ? (
 
                             <Link to={item.casino_id} className="relative flex flex-col items-center justify-center group">
-                                <div className="relative lg:w-52 lg:h-32 w-44 h-28 border border-gray-100 border-opacity-10 roundedh-xl overflow-hidden">
+                                <div className="relative lg:w-52 lg:h-32 w-44 h-28 border border-gray-100 border-opacity-10 rounjded-xl overflow-hidden">
                                     {/* Image */}
                                     <img
-                                        className="w-full h-full object-cover roundehd-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
+                                        className="w-full h-full object-cover rouhnded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
                                         src={item.image}
                                         alt="Poker Icon"
                                     />
@@ -128,68 +128,9 @@ const LiveCasino = () => {
 
                 </div>
 
-                <p className='font-medium flex gap-2  items-center mt-4 text-lg'> <img className='size-4' src='/tash.png' />Other Casino</p>
 
 
-                <div className='flejx grid  md:grid-cols-4 grid-cols-2 mt-2 overflow-x-auto scrollbar-hide gap-4 '>
-
-
-                    {data.map((item) => (
-                        item ? (
-
-                            <Link to="#" className="relative flex  flex-col items-center justify-center group">
-                                <div className="relative w-52 h-32 border border-gray-100 border-opacity-10 rounded-xl overflow-hidden">
-                                    {/* Image */}
-                                    <img
-                                        className="w-full h-full object-cover rounded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
-                                        src="/ultimate-roullete.png"
-                                        alt="Poker Icon"
-                                    />
-
-                                    {/* shadow  */}
-
-                                    <div className="absolute inset-0 bg-black bg-opacity-10 transition-opacity duration-500 ease-out group-hover:bg-opacity-50"></div>
-
-                                    <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-                                        <button className="hover:text-black text-orange-300 font-bold border rounded-md px-6 py-1 shadow-md hover:bg-yellow-600 border-yellow-600 transform transition-transform duration-300">
-                                            Play
-                                        </button>
-                                    </div>
-
-                                    <p className="absolute text-xs bottom-2 left-1 text-white px-2 py-1 rounded-sm">
-                                        Evolution
-                                    </p>
-                                </div>
-
-                                {/* Below Image Text */}
-                                <p className="font-medium text-base"> {item.casino_id
-                                }</p>
-                            </Link>
-                        ) : ""
-                    ))}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-
+        
 
 
 
@@ -198,4 +139,4 @@ const LiveCasino = () => {
     )
 }
 
-export default LiveCasino
+export default Slot

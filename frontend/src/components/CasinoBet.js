@@ -9,18 +9,18 @@ const CasinoBet = () => {
     const cname = useParams().name
     console.log(cname)
 
-    useEffect(() => {
-        axios.get(`https://diamond-casino.p.rapidapi.com/api/casino/stream?name=${cname}`, {
-            headers: {
-                'x-rapidapi-key': 'c872ddd763mshcc2e67f5845da91p18569djsn3f6476020794',
-                'x-rapidapi-host': 'diamond-casino.p.rapidapi.com'
-            }
-        }).then((res) => {
-            console.log(res, "iframe");
-            const list = res.data
-            setData(list)
-        })
-    }, [])
+    // useEffect(() => {
+    //     axios.get(`https://diamond-casino.p.rapidapi.com/api/casino/stream?name=${cname}`, {
+    //         headers: {
+    //             'x-rapidapi-key': 'c872ddd763mshcc2e67f5845da91p18569djsn3f6476020794',
+    //             'x-rapidapi-host': 'diamond-casino.p.rapidapi.com'
+    //         }
+    //     }).then((res) => {
+    //         console.log(res, "iframe");
+    //         const list = res.data
+    //         setData(list)
+    //     })
+    // }, [])
 
 
     return (

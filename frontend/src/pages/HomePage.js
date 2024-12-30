@@ -129,61 +129,61 @@ const HomePage = () => {
 
       </div>
 
-      <div className='md:flex grid grid-cols-2 md:grid-cols-2 gap-2  mb-2 md:grid-rows-1 grid-rows-2'>
-        <div className="relative md:w-52 w-44">
+      <div className="flex gap-2 overflow-x-auto  whitespace-nowrap  py-2">
+        {/* Match Card 1 */}
+        <div className="relative flex-shrink-0 w-48 md:w-52">
           <img
             className="bg-blue-950 w-full"
             src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
             alt="Wave"
           />
-          <p className="absolute flex md:text-base text-sm items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+          <p className="absolute flex md:text-base text-sm items-center gap-1 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
             <MdSportsCricket />
             West Indies v India
           </p>
         </div>
 
-        <div className="relative md:w-52 w-44">
+        {/* Match Card 2 */}
+        <div className="relative flex-shrink-0 w-48 md:w-52">
           <img
             className="bg-blue-950 w-full"
             src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
             alt="Wave"
           />
-          <p className="absolute flex md:text-base text-sm items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+          <p className="absolute flex md:text-base text-sm items-center gap-1 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
             <MdSportsCricket />
             Australia v India
           </p>
         </div>
 
-        <div className="relative md:w-52 w-44">
+        {/* Match Card 3 */}
+        <div className="relative flex-shrink-0 w-48 md:w-52">
           <img
             className="bg-blue-950 w-full"
             src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
             alt="Wave"
           />
-          <p className="absolute flex  md:text-base text-sm items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+          <p className="absolute flex md:text-base text-sm items-center gap-1 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
             <MdSportsCricket />
-
             South Africa v Pakistan
           </p>
         </div>
 
-        <div className="relative md:w-52 w-44">
+
+        {/* Match Card 4 */}
+        <div className="relative flex-shrink-0 w-48 md:w-52">
           <img
             className="bg-yellow-600 w-full"
             src="https://wver.sprintstaticdata.com/v97/static/front/img/wave2.svg"
             alt="Wave"
           />
-          <p className="absolute flex md:text-base text-sm items-center gap-1 text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
+          <p className="absolute flex md:text-base text-sm items-center gap-1 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-bold">
             <MdSportsCricket />
-
             South Africa v Pakistan
           </p>
         </div>
-
-       
-
-
       </div>
+
 
 
       <Carousel />
@@ -192,23 +192,23 @@ const HomePage = () => {
 
 
 
-      <div className='relative  px-8'>
+      <div className='relative'>
 
         <button
-          className="absolute left-0 top-1/2 transform -translate-y-1/2  px-3 py-2 rounded-full z-10"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-400   px-2 py-2 rounded-full z-10"
           onClick={scrollLeft}
         >
           {/* &#8592; */}
           <FaAngleLeft />
         </button>
 
-        <div ref={scrollContainerRef} className='text-sm flex overflow-x-scroll scrollbar-hide  text-nowrap flex-shrink-0 gap-1  py-3'>
+        <div ref={scrollContainerRef} className='text-sm flex overflow-x-scroll scrollbar-hide  text-nowrap flex-shrink-0 gap-1 pb-3 pt-3'>
           {data.map((item) => (
             item ? (
               <button
                 key={item.id}
                 onClick={() => handleButtonClick(item.id)}
-                className={`px-4 flex-grow min-w-fit  flex items-center gap-2 py-2 ${activeId === item.id
+                className={`px-4 flex-grow min-w-fit  flex items-center gap-2 py-2 ${activeId == item.id
                   ? 'bg-blue-950 text-white'
                   : 'bg-gray-100 text-black'
                   }`}>
@@ -221,7 +221,7 @@ const HomePage = () => {
 
 
         <button
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 px-3 py-2 rounded-full z-10"
+          className="absolute right-0 top-1/2 bg-gray-400 rounded-full transform -translate-y-1/2 px-2 py-2  z-10"
           onClick={scrollRight}
         >
           <FaAngleRight />
@@ -236,7 +236,7 @@ const HomePage = () => {
       </div>
 
 
-      <div className="mt-2 my-4 px-4 py-1 ml-1 mr-2 bg-gray-100">
+      <div className=" bg-gray-100">
         {activeId ? (
           componentMapping[activeId] || <p>Component not found.</p>
         ) : (

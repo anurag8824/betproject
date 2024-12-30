@@ -6,6 +6,8 @@ import NoPage from './pages/NoPage';
 import CricketBet from './components/CricketBet';
 import LiveCasino from './components/LiveCasino';
 import CasinoBet from './components/CasinoBet';
+import Slot from './pages/Slot';
+import Fantasy from './pages/Fantasy';
 
 
 
@@ -21,6 +23,11 @@ function App() {
           <Route path="cricket-bet/:id1/:id2" element={<CricketBet />} />
           <Route path="owncasino" element={<LiveCasino />} />
           <Route path="owncasino/:name" element={<CasinoBet />} />
+
+          <Route path="slot" element={<Slot />} />
+          <Route path="fantasy" element={<Fantasy />} />
+
+
 
 
 

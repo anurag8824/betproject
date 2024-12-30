@@ -28,11 +28,11 @@ const Carousel = () => {
 
   return (
 
-    <div className="mr-4">
-    <div className="relative w-full h-56  overflow-hidden">
+    <div className="mr-0">
+    <div className="relative w-full h-1/2 bg-red-700  overflow-hidden">
       {/* Carousel Container */}
       <div
-        className="flex transition-transform duration-700 ease-in-out"
+        className="flex  transition-transform duration-700 ease-in-out"
         style={{
           transform: `translateX(-${(currentIndex + 1) * 100}%)`, // Move carousel to the next slide
         }}
