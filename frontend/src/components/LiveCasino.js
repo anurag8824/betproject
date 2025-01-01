@@ -23,6 +23,21 @@ const LiveCasino = () => {
     // }, [])
 
 
+    useEffect(() => {
+        axios.get("https://Diamond-Casino-68-Table-Casino-API.proxy-production.allthingsdev.co/casino/tableid", {
+            headers: {
+                'x-apihub-key': '6sOEcHRZuZiJY2It-IhDWPdpwIm2MJm1jpcuFW6gdeJDXZiufL',
+                'x-apihub-host': 'Diamond-Casino-68-Table-Casino-API.allthingsdev.co',
+                'x-apihub-endpoint': '8ca481a1-f18f-4a84-9209-d071d31c5289'
+            }
+        }).then((res) => {
+            console.log(res, "casino list");
+            const list = res.data.data.t1
+            setData(list)
+        })
+    }, [])
+
+
     const tempData = [
         {
             casino_id: 'Andarbahar',
@@ -77,6 +92,27 @@ const LiveCasino = () => {
         <div>
 
             <div>
+
+
+                <div className="iframe-container">
+                    <iframe
+                        src="https://livestream-v3-iframe.akamaized.uk/casinoStream?id=Queen&key=helloworld"
+                        title="External Content"
+                        width="100%"
+                        height="500px"
+                        style={{ border: 'none' }}
+                    ></iframe>
+                </div>
+
+                <div className="iframe-container">
+                    <iframe
+                        src="https://livestream-v3-iframe.akamaized.uk/casinoStream?id=trap&key=helloworld"
+                        title="External Content"
+                        width="100%"
+                        height="500px"
+                        style={{ border: 'none' }}
+                    ></iframe>
+                </div>
 
                 <div className='flex justify-between'>
                     <p className='font-medium flex gap-2  items-center mt-4 text-lg'> <img className='size-4' src='/tash.png' />Live Casino</p>
@@ -137,12 +173,12 @@ const LiveCasino = () => {
                     {data.map((item) => (
                         item ? (
 
-                            <Link to="#" className="relative flex  flex-col items-center justify-center group">
+                            <Link to={item.gmid} className="relative flex  flex-col items-center justify-center group">
                                 <div className="relative w-52 h-32 border border-gray-100 border-opacity-10 rounded-xl overflow-hidden">
                                     {/* Image */}
                                     <img
                                         className="w-full h-full object-cover rounded-xl transform transition-transform duration-500 ease-out group-hover:scale-110"
-                                        src="/ultimate-roullete.png"
+                                        src={`/${item.imgpath}`}
                                         alt="Poker Icon"
                                     />
 
@@ -162,8 +198,7 @@ const LiveCasino = () => {
                                 </div>
 
                                 {/* Below Image Text */}
-                                <p className="font-medium text-base"> {item.casino_id
-                                }</p>
+                                <p className="font-medium text-base">{item.gname}</p>
                             </Link>
                         ) : ""
                     ))}

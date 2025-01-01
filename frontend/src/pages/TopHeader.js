@@ -114,7 +114,7 @@ const TopHeader = () => {
             </div>
         </nav>
 
-            <div className='bg-gray-0 md:flex pt-1 justify-between '>
+            <div className='bg-gray-200 md:flex pt-1 justify-between '>
                 <img className='h-12 md:block hidden' src="/infa.png" alt='fgh' />
 
 
@@ -131,52 +131,27 @@ const TopHeader = () => {
 
 
 
-                <div className='flex justify-center p-0.5 gap-4'>
-
-                    <div className=' justify-between items-center pr-2 bg-black w-32 flex'>
-
-                        <div className='bg-gray-600 py-3 px-3'>
-
-                            <FaWallet className='w-6 h-6  text-white ' />
-
+                <div className="flex justify-center p-1 gap-4">
+                    {/* Points and Experience Card */}
+                    <div className="flex items-center justify-between pr-3 bg-gray-300 w-40 rounded-md shadow-lg">
+                        <div className="flex items-center justify-center bg-gray-400 p-2 rounded-l-md">
+                            <FaWallet className="w-6 h-6 " />
                         </div>
-
-
-
-                        <div className='text-white text-sm '>
-                            <p className=''>Pts:1500</p>
-                            <p className=''>Exp:0</p>
-
+                        <div className="text-sm pl-2">
+                            <p>Pts: 1500</p>
+                            <p>Exp: 0</p>
                         </div>
-
-
-
-
-
                     </div>
 
-                    <div className=' justify-between items-center pr-2 bg-black w-32 flex'>
-
-                        <div className='bg-gray-600 py-3 px-3'>
-
-                            <FaUser className='w-6 h-6  text-white ' />
-
+                    {/* User Info Card */}
+                    <div className="flex items-center justify-between pr-3 bg-gray-300 w-40 rounded-md shadow-lg">
+                        <div className="flex items-center justify-center bg-gray-400 p-2 rounded-l-md">
+                            <FaUser className="w-6 h-6" />
                         </div>
-
-
-
-                        <div className='text-white text-sm '>
-                            <p className=''>Demo</p>
-
-
+                        <div className="text-sm pl-2">
+                            <p>Demo</p>
                         </div>
-
-
-
-
-
                     </div>
-
                 </div>
 
 

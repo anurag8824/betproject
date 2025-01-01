@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="cricket-bet/:id1/:id2" element={<CricketBet />} />
+          <Route path="cricket-bet/:id" element={<CricketBet />} />
           <Route path="owncasino" element={<LiveCasino />} />
           <Route path="owncasino/:name" element={<CasinoBet />} />
 

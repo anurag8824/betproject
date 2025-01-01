@@ -23,18 +23,54 @@ const CasinoBet = () => {
     // }, [])
 
 
+     useEffect(() => {
+        axios.get(`https://Diamond-Casino-68-Table-Casino-API.proxy-production.allthingsdev.co/casino/tv?id=superover3`, {
+            headers: { 
+                'x-apihub-key': '6sOEcHRZuZiJY2It-IhDWPdpwIm2MJm1jpcuFW6gdeJDXZiufL', 
+                'x-apihub-host': 'Diamond-Casino-68-Table-Casino-API.allthingsdev.co', 
+                'x-apihub-endpoint': 'a6dac04c-1067-40ef-ab3e-fa3ecd65941b'
+             }
+        }).then((res) => {
+            console.log(res, "iframelink");
+            // const list = res.data
+            // setData(list)
+        })
+        .catch((err)=>{
+            console.log(err,"error")
+        })
+    }, [])
+
+    useEffect(() => {
+        axios.get(`https://Diamond-Casino-68-Table-Casino-API.proxy-production.allthingsdev.co/casino/data?type=${cname}`, {
+            headers: { 
+                'x-apihub-key': '6sOEcHRZuZiJY2It-IhDWPdpwIm2MJm1jpcuFW6gdeJDXZiufL', 
+                'x-apihub-host': 'Diamond-Casino-68-Table-Casino-API.allthingsdev.co', 
+                'x-apihub-endpoint': 'a6dac04c-1067-40ef-ab3e-fa3ecd65941b'
+             }
+        }).then((res) => {
+            console.log(res, "info get");
+            // const list = res.data
+            // setData(list)
+        })
+        .catch((err)=>{
+            console.log(err,"error")
+        })
+    }, [])
+
+
+
     return (
         <div>
             <div>CasinoBet</div>
             
             <div className="iframe-container">
-            <iframe
+            {/* <iframe
                 src={data.stream_url}
                 title="External Content"
                 width="100%"
                 height="500px"
                 style={{ border: 'none' }}
-            ></iframe>
+            ></iframe> */}
         </div>
 
        
